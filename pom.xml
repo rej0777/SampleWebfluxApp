@@ -12,8 +12,9 @@
 	<artifactId>SampleWebfluxApp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SampleWebfluxApp</name>
-	<description>Demo project for Webflux</description>
+	<description>Demo project for Webflux and reactiv</description>
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
