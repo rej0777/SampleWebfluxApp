@@ -1,6 +1,7 @@
 package sampleWebfluxApp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,4 +47,16 @@ public class ReactivMathValidationController {
 	}
 	//http://localhost:8080/reactiveMath/square/8/MonoError
 
+	
+	
+	@GetMapping("square/{input}/v2")
+	public Mono<ResponseEntity<Response>> v2(@PathVariable int input) {
+		return Mono
+				.just(input)
+				.filter(i -> i>=10 && i<=20)
+				.flatMap(i -> this.reactiveMathService.findSquare(i))
+				.map(ResponseEntity::ok)
+				.defaultIfEmpty(ResponseEntity.badRequest().build());
+	}
+	
 }
