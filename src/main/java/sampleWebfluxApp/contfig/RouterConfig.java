@@ -71,8 +71,8 @@ public class RouterConfig {
 	//@Bean
 		private RouterFunction<ServerResponse> serverResponseRouterFunction2(){//public
 			return RouterFunctions.route()
-					.GET("square/{input}",RequestPredicates.path("*/1?"), requestHandler::squareHandler)
-					.GET("square/{input}",req -> ServerResponse.badRequest().bodyValue("tylko 10-19"))
+					.GET("square/{input}",RequestPredicates.path("*/1?").or(RequestPredicates.path("*20")), requestHandler::squareHandler)
+					.GET("square/{input}",req -> ServerResponse.badRequest().bodyValue("tylko 10-20"))
 					.GET("table/{input}", requestHandler::tableHandler)
 					.GET("router/table/{input}/stream", requestHandler::tableStreamHandler)
 					.POST("multiplay", requestHandler::multiplyHandler)
