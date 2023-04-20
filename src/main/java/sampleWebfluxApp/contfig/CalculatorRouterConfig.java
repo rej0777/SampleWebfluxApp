@@ -32,6 +32,8 @@ public class CalculatorRouterConfig {
 				.GET("{a}/{b}", req -> ServerResponse.badRequest().bodyValue("OP onli +_-*/")) 
 				.build();
 	}
+	//http://localhost:8080/calculator/4/2
+	//Headers Key=op VALIUE=+-*/
 
 	private RequestPredicate isoperacion(String operation) {
 		return RequestPredicates
