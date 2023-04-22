@@ -30,4 +30,19 @@ public class GetMultiResponseTest extends BaseTest {
 		.verifyComplete();
 	}
 	
+	@Test
+	public void fluxStreamTest() {
+		
+		Flux<Response> responseFlex= this.webClient
+		.get()
+		.uri("reactiveMath/table/{input}/stream", 5)
+		.retrieve()
+		.bodyToFlux(Response.class)
+		.doOnNext(System.out::println);
+		
+		StepVerifier.create(responseFlex)
+		.expectNextCount(10)
+		.verifyComplete();
+	}
+	
 }
