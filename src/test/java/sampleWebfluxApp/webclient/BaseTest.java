@@ -1,4 +1,4 @@
-package sampleWebfluxApp;
+package sampleWebfluxApp.webclient;
 
 import org.springframework.boot.test.context.SpringBootTest;
 

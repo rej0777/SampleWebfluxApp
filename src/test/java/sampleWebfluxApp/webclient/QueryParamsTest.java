@@ -1,6 +1,7 @@
-package sampleWebfluxApp;
+package sampleWebfluxApp.webclient;
 
 import java.net.URI;
+import java.util.Map;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,5 +34,4 @@ public class QueryParamsTest extends BaseTest {
 		.expectNextCount(2)
 		.verifyComplete();
 		}
-	
 }

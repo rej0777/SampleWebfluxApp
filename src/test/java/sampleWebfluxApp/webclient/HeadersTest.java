@@ -1,6 +1,7 @@
-package sampleWebfluxApp;
+package sampleWebfluxApp.webclient;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -9,8 +10,10 @@ import reactor.test.StepVerifier;
 import sampleWebfluxApp.dto.MultiplyRequestDto;
 import sampleWebfluxApp.dto.Response;
 
-public class AttributesTest extends BaseTest{
 
+public class HeadersTest extends BaseTest {
+	/**/
+	
 	@Autowired
 	private WebClient webClient;
 
@@ -22,8 +25,7 @@ public class AttributesTest extends BaseTest{
 		.uri("reactiveMath/multiply")
 		.bodyValue(requestDto(4,8))
 		//.headers(h -> h.set("MyKeay1", "MyVal1"))
-		//.headers(h -> h.setBasicAuth("Uname", "Upasword"))
-		.attribute("autch", "basic")
+		.headers(h -> h.setBasicAuth("Uname", "Upasword"))
 		.retrieve()
 		.bodyToMono(Response.class)
 		.doOnNext(System.out::println);
@@ -41,4 +43,5 @@ public class AttributesTest extends BaseTest{
 		dto.setSecond(b);
 		return dto;
 	}
+		
 }

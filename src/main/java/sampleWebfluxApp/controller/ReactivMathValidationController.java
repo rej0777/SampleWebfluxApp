@@ -13,7 +13,7 @@ import sampleWebfluxApp.exception.InputValidationException;
 import sampleWebfluxApp.service.ReactiveMathService;
 
 @RestController
-@RequestMapping("reactiveMath")
+@RequestMapping("reactiveMathValid")
 public class ReactivMathValidationController {
 
 	
@@ -31,7 +31,7 @@ public class ReactivMathValidationController {
 	//http://localhost:8080/reactiveMath/square/8/throw
 	//powinno zwrucic
 	 //{ "errorCode": 100, "input": 8, "message": "dozwolony zakrs pomiędzy 1 - 20"}
-	 
+	             
 	 
 	@GetMapping("square/{input}/MonoError")
 	public Mono<Response> findSquareMonoError(@PathVariable int input) {

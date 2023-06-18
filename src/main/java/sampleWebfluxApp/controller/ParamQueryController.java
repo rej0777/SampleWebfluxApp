@@ -14,10 +14,8 @@ public class ParamQueryController {
 	@GetMapping("serch")
 	public Flux<Integer> serchJobs(
 			@RequestParam("count")int count, 
-			@RequestParam("pagr")int page) {
-		
-		
-		
+			@RequestParam("page")int page) {
+	
 		return Flux.just(count, page);
 	}
 }
