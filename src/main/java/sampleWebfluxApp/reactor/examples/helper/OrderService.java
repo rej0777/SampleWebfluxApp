@@ -1,4 +1,4 @@
-package sampleWebfluxApp.reactor.miniExampleApp.revenueStream;
+package sampleWebfluxApp.reactor.examples.helper;
 
 import java.time.Duration;
 import java.util.Objects;
@@ -23,5 +23,12 @@ public class OrderService {
 				.publish()
 				.refCount(2);
 	}
+	
+//--------------------
+	public static Flux<PurchaseOrder> orderStream2(){
+		return Flux.interval(Duration.ofMillis(300))
+				.map(t ->  new PurchaseOrder() );
+	}
+	
 	
 }

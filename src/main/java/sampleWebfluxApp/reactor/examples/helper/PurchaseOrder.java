@@ -1,4 +1,4 @@
-package sampleWebfluxApp.reactor.miniExampleApp.revenueStream;
+package sampleWebfluxApp.reactor.examples.helper;
 
 import lombok.Data;
 import sampleWebfluxApp.reactor.Util;

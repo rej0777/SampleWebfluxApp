@@ -1,4 +1,4 @@
-package sampleWebfluxApp.reactor.miniExampleApp.revenueStream;
+package sampleWebfluxApp.reactor.examples.helper;
 
 import java.time.Duration;
 import java.util.HashMap;

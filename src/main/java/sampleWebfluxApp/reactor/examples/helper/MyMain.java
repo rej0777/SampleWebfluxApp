@@ -1,4 +1,4 @@
-package sampleWebfluxApp.reactor.miniExampleApp.revenueStream;
+package sampleWebfluxApp.reactor.examples.helper;
 
 import sampleWebfluxApp.reactor.Util;
 

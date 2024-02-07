@@ -1,4 +1,4 @@
-package sampleWebfluxApp.reactor.miniExampleApp;
+package sampleWebfluxApp.reactor.examples;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
